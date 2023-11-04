@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Домашнє завдання GoIT Markup HomeWork-03</title>
+  <title>Домашнє завдання GoIT Markup HomeWork-06</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,14 +65,46 @@
 
       <!-- Backdrop -->
       <div class="backdrop is-hidden" data-modal>
+        <!-- Modal Callback window-->
         <div class="modal">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum quos quam vel laboriosam nihil hic. Qui atque accusantium incidunt architecto ipsam necessitatibus voluptatem ipsum obcaecati cum labore, illum facilis beatae, eveniet ducimus repellendus neque iure omnis accusamus optio minima. Sed at ea consectetur vitae! Illum vero velit facilis necessitatibus id.</p>
+          <!-- Callback Form -->
+          <form class="callback js-speaker-form">
+            <h2 class="callback-title">Залиште свої дані, ми вам передзвонимо</h2>
+            <div class="form-field">
+              <label for="user-name">Ім'я</label>
+              <input type="text" name="user-name" id="user-name">
+            </div>
+
+            <div class="form-field">
+              <label for="user-phone">Телефон</label>
+              <input type="tel" name="user-phone" id="user-phone">
+            </div>
+
+            <div class="form-field">
+              <label for="user-email">Пошта</label>
+              <input type="email" name="user-email" id="user-email">
+            </div>
+
+            <div class="form-field">
+              <label for="user-comment">Коментар</label>
+              <textarea class="user-comment" name="user-comment" id="user-comment" rows="10" placeholder="Введіть текст"></textarea>
+            </div>
+
+            <div class="form-field">
+              <input type="checkbox" name="policy" id="policy">
+              <label for="policy">Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></label>
+            </div>
+
+            <button type="submit">Відправити</button>
+          </form>
+          <!-- End Callback Form -->
           <button class="close-btn" type="button" data-modal-close>
             <svg width="18px" height="18px">
               <use href="./images/sprite.svg#modal-close-black"></use>
             </svg>
           </button>
         </div>
+        <!-- End Modal Callback window-->
       </div>
       <!-- End Backdrop -->
     </section>
@@ -452,6 +484,23 @@
   <!-- End Site footer -->
   <!-- Скріпт для кнопок відкриття/закриття модального вікна -->
   <script src="./js/modal.js">
+  </script>
+
+  <!-- Наступний скріпт показує введені 'данні форми' при submit та блокує 'відправку форми' -->
+  <script>
+    (() => {
+      document
+        .querySelector('.js-speaker-form')
+        .addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}: ${value}`),
+          );
+
+          e.currentTarget.reset();
+        });
+    })();
   </script>
 </body>
 
