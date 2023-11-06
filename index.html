@@ -68,39 +68,49 @@
         <!-- Modal Callback window-->
         <div class="modal">
           <!-- Callback Form -->
-          <form class="callback js-speaker-form">
-            <h2 class="callback-title">Залиште свої дані, ми вам передзвонимо</h2>
-            <div class="form-field">
-              <label for="user-name">Ім'я</label>
-              <input type="text" name="user-name" id="user-name">
-            </div>
+          <form class="callback js-speaker-form" autocomplete="off">
+            <h2 class="form-title">Залиште свої дані, ми вам передзвонимо</h2>
 
-            <div class="form-field">
-              <label for="user-phone">Телефон</label>
-              <input type="tel" name="user-phone" id="user-phone">
-            </div>
+            <label class="field-item">
+              <input class="field-input" type="text" name="user-name" placeholder=" " required>
+              <span class="field-label">Ім'я</span>
+              <svg class="field-icon" width="18px" height="18px">
+                <use href="./images/sprite.svg#form-person"></use>
+              </svg>
+            </label>
 
-            <div class="form-field">
-              <label for="user-email">Пошта</label>
-              <input type="email" name="user-email" id="user-email">
-            </div>
+            <label class="field-item">
+              <input class="field-input" type="tel" name="user-phone" placeholder=" " required>
+              <span class="field-label">Телефон</span>
+              <svg class="field-icon" width="18px" height="18px">
+                <use href="./images/sprite.svg#form-phone"></use>
+              </svg>
+            </label>
 
-            <div class="form-field">
-              <label for="user-comment">Коментар</label>
-              <textarea class="user-comment" name="user-comment" id="user-comment" rows="10" placeholder="Введіть текст"></textarea>
-            </div>
+            <label class="field-item">
+              <input class="field-input" type="email" name="user-email" placeholder=" " required>
+              <span class="field-label">Пошта</span>
+              <svg class="field-icon" width="18px" height="18px">
+                <use href="./images/sprite.svg#form-email"></use>
+              </svg>
+            </label>
 
-            <div class="form-field">
-              <input type="checkbox" name="policy" id="policy">
-              <label for="policy">Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></label>
-            </div>
+            <label class="">
+              <span class="">Коментар</span>
+              <textarea class="user-comment" name="user-comment" rows="10" placeholder="Введіть текст"></textarea>
+            </label>
+
+            <label class="">
+              <input type="checkbox" name="policy" >
+              <span>Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></span>
+            </label>
 
             <button type="submit">Відправити</button>
           </form>
           <!-- End Callback Form -->
           <button class="close-btn" type="button" data-modal-close>
             <svg width="18px" height="18px">
-              <use href="./images/sprite.svg#modal-close-black"></use>
+              <use href="./images/sprite.svg#modal-close"></use>
             </svg>
           </button>
         </div>

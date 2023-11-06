@@ -96,10 +96,6 @@ body {
   margin-left: 93px;
 }
 
-.site-nav .item {
-  overflow: hidden;
-}
-
 .site-nav .item + .item {
   margin-left: 50px;
 }
@@ -200,7 +196,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  text-align: center;
 }
 
 .hero-title {
@@ -210,11 +205,14 @@ body {
   font-weight: 900;
   line-height: 1.36;
   letter-spacing: 0.06em;
+  text-align: center;
   text-transform: uppercase;
   color: var(--white-color);
 }
 
 .hero .btn {
+  display: block;
+  margin: 0 auto;
   padding: 10px 32px;
 
   font-size: 16px;
@@ -294,69 +292,109 @@ body {
   border-radius: 50%;
   cursor: pointer;
 
-  transition: background-color var(--transition-duration) var(--timing-function),
-              box-shadow var(--transition-duration) var(--timing-function);
+  transition: fill var(--transition-duration) var(--timing-function);
 }
 
 .modal .close-btn:hover {
-  background-color: var(--secondary-bg-color);
-  box-shadow: inset 0px 2px 1px 0px rgba(1, 1, 1, 0.20),
-              inset 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-              inset 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  fill: var(--accent-color);
 }
+
 /* End Modal Callback window */
 
 /* Callback Form */
 .callback {
-  width: 100%;
-  /* outline: 1px dashed tomato; */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.callback-title {
-  margin-bottom: 12px;
-
-  color: var(--title-text-color);
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.callback .form-field {
-  /* outline: 1px dashed #c5c5c5; */
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-  text-align: left;
+
+  color: var(--title-text-color);
+  background-color: var(--primary-bg-color);
+  outline: 1px dashed tomato;
 }
 
-.form-field label {
+.form-title {
+  margin-bottom: 18px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.field-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 40px;
+  margin-bottom: 18px;
+
+  outline: 1px dashed saddlebrown;
+}
+
+.field-label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+
   margin-bottom: 4px;
+
   font-size: 12px;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--primary-text-color);
+
+  cursor: text;
+  transform: translate(0, -50%);
+  transition: transform var(--transition-duration) var(--timing-function),
+              color var(--transition-duration) var(--timing-function);
 }
 
-.form-field input {
+.field-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  transition: fill var(--transition-duration) var(--timing-function);
+}
+
+.field-input {
   padding: 11px 40px;
-  border-radius: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.20);
-}
-
-.form-field input:hover,
-.form-field input:focus {
-  border-color: #2196f3;
-}
-
-.user-comment {
-  padding: 12px 16px;
-
-  font-size: 12px;
-  color: rgba(117, 117, 117, 0.50);
 
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.20);
 
-  resize: none;
+  transition: border-color var(--transition-duration) var(--timing-function);
+}
+
+.field-input:focus {
+  outline: 1px solid #2196F3;
+}
+
+.field-input:focus,
+.field-input:valid,
+.field-input:not(:placeholder-shown) {
+  border-color: #2196F3;
+}
+
+.field-input:focus + .field-label,
+.field-input:valid + .field-label,
+.field-input:not(:placeholder-shown) + .field-label {
+  padding: 0 3px;
+
+  font-size: 10px;
+  color: var(--accent-color);
+
+  background-color: rgb(255, 255, 255);
+
+  transform: translate(-30px, -26px);
+}
+
+.field-input:focus ~ .field-icon,
+.field-input:valid ~ .field-icon,
+.field-input:not(:placeholder-shown) ~ .field-icon {
+  fill: var(--accent-color);
 }
 /* End Callback Form */
 
@@ -441,7 +479,7 @@ body {
   width: 100%;
   height: 70px;
   padding: 27px 0;
-  background-color: rgba(48, 49, 59, 0.8);;
+  background-color: rgba(48, 49, 59, 0.8);
 }
 
 .work-title {
@@ -629,7 +667,7 @@ body {
   margin-left: 70px;
 }
 
-.footer-contacts .social-link{
+.footer-contacts .social-link {
   background-color: rgba(255, 255, 255, 0.10);
   color: var(--white-color);
   transition: background-color var(--transition-duration) var(--timing-function);
@@ -714,8 +752,8 @@ body {
 .product-card:hover,
 .product-card:focus {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.06),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+              0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+              0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
 .product-thumb {
@@ -755,9 +793,9 @@ body {
   border-left: 1px solid #EEEEEE;
 }
 
- .product-link {
+.product-link {
   text-decoration: none;
- }
+}
 
 .product-name {
   margin-bottom: 4px;
