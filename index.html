@@ -68,7 +68,7 @@
         <!-- Modal Callback window-->
         <div class="modal">
           <!-- Callback Form -->
-          <form class="callback js-speaker-form" autocomplete="off">
+          <form class="callback-form js-speaker-form" autocomplete="off">
             <h2 class="form-title">Залиште свої дані, ми вам передзвонимо</h2>
 
             <label class="field-item">
@@ -95,17 +95,23 @@
               </svg>
             </label>
 
-            <label class="">
-              <span class="">Коментар</span>
-              <textarea class="user-comment" name="user-comment" rows="10" placeholder="Введіть текст"></textarea>
+            <label class="comment-field">
+              <span class="comment-label">Коментар</span>
+              <textarea class="user-comment" name="user-comment" placeholder="Введіть текст"></textarea>
             </label>
 
-            <label class="">
-              <input type="checkbox" name="policy" >
-              <span>Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></span>
+            <label class="policy-field">
+              <input class="policy-checkbox" type="checkbox" name="policy" >
+              <svg class="icon check" width="16px" height="15px">
+                <use href="./images/sprite.svg#icon-check"></use>
+              </svg>
+              <svg class="icon box" width="16px" height="15px">
+                <use href="./images/sprite.svg#icon-box"></use>
+              </svg>
+              <span class="policy-label">Погоджуюся з розсилкою та приймаю <a class="policy-link" href="">Умови договору</a></span>
             </label>
 
-            <button type="submit">Відправити</button>
+            <button class="btn" type="submit">Відправити</button>
           </form>
           <!-- End Callback Form -->
           <button class="close-btn" type="button" data-modal-close>

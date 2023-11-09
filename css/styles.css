@@ -41,6 +41,8 @@ body {
 }
 
 .btn {
+  min-width: 200px;
+
   font-family: inherit;
   color: var(--white-color);
 
@@ -257,7 +259,6 @@ body {
   left: 50%;
 
   width: 528px;
-  min-height: 581px;
   padding: 40px 40px;
 
   background-color: var(--primary-bg-color);
@@ -302,13 +303,12 @@ body {
 /* End Modal Callback window */
 
 /* Callback Form */
-.callback {
+.callback-form {
   display: flex;
   flex-direction: column;
 
   color: var(--title-text-color);
   background-color: var(--primary-bg-color);
-  outline: 1px dashed tomato;
 }
 
 .form-title {
@@ -319,17 +319,14 @@ body {
   text-align: center;
 }
 
+/* Стилі для input: user-name | user-phone | user-email */
 .field-item {
   position: relative;
 
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-  height: 40px;
   margin-bottom: 18px;
-
-  outline: 1px dashed saddlebrown;
 }
 
 .field-label {
@@ -337,17 +334,17 @@ body {
   top: 50%;
   left: 40px;
 
-  margin-bottom: 4px;
-
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--primary-text-color);
+  background-color: transparent;
 
   cursor: text;
-  transform: translate(0, -50%);
+  transform: translateY(-50%) scale(1);
   transition: transform var(--transition-duration) var(--timing-function),
-              color var(--transition-duration) var(--timing-function);
+              color var(--transition-duration) var(--timing-function),
+              background-color var(--transition-duration) var(--timing-function);
 }
 
 .field-icon {
@@ -360,42 +357,187 @@ body {
 }
 
 .field-input {
-  padding: 11px 40px;
+  width: 100%;
+  max-height: 40px;
 
+  padding: 12px 40px;
+
+  font-size: 12px;
+  color: var(--title-text-color);
+  background-color: transparent;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.20);
-
-  transition: border-color var(--transition-duration) var(--timing-function);
 }
 
+/* Варіант фокусу форми №1 */
 .field-input:focus {
-  outline: 1px solid #2196F3;
+  outline: 1px solid var(--accent-color);
+}
+
+.field-input:focus + .field-label {
+  color: var(--accent-color);
+}
+
+.field-input:focus ~ .field-icon {
+  fill: var(--accent-color);
+}
+
+.field-input:focus + .field-label,
+.field-input:not(:placeholder-shown) + .field-label {
+  padding: 0 6px;
+  border-radius: 4px;
+  background-color: var(--primary-bg-color);
+  transform: translate(-33px, -27px) scale(0.8);
+}
+/* End Стилі для input: user-name | user-phone | user-email */
+
+/* Стилі для textarea: user-comment */
+.comment-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-label {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
+.user-comment {
+  min-height: 120px;
+  padding: 12px 16px;
+
+  font-size: 12px;
+  color: var(--title-text-color);
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.20);
+  resize: none;
+}
+
+.user-comment:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+.user-comment::placeholder {
+  color: rgba(117, 117, 117, 0.50);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+/* End Стилі для textarea: user-comment */
+
+/* Стилі для checkbox: policy */
+.policy-field {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.policy-checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.policy-field .icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  width: 16px;
+  height: 15px;
+
+  transform: translateY(-50%);
+  opacity: 1;
+
+  transition: opacity var(--transition-duration) var(--timing-function);
+}
+
+.policy-field .icon.check {
+  opacity: 0;
+}
+
+.policy-checkbox:checked + .icon.check {
+  opacity: 1;
+}
+
+.policy-checkbox:checked ~ .icon.box {
+  opacity: 0;
+}
+
+.policy-label {
+  padding-left: 36px;
+
+  line-height: 1.71;
+  color: var(--primary-text-color);
+}
+
+.policy-link {
+  color: var(--accent-color);
+}
+
+/* End Стилі для checkbox: policy */
+
+/* Form button */
+
+
+/* End Form button */
+
+/* End Варіант фокусу форми №1 */
+
+/* Варіант фокусу форми №2 */
+/*
+.field-input:focus {
+  outline: 1px solid var(--accent-color);
 }
 
 .field-input:focus,
 .field-input:valid,
 .field-input:not(:placeholder-shown) {
-  border-color: #2196F3;
+  border-color: var(--accent-color);
 }
 
 .field-input:focus + .field-label,
 .field-input:valid + .field-label,
 .field-input:not(:placeholder-shown) + .field-label {
   padding: 0 3px;
-
-  font-size: 10px;
   color: var(--accent-color);
-
-  background-color: rgb(255, 255, 255);
-
-  transform: translate(-30px, -26px);
+  background-color: var(--primary-bg-color);
+  transform: translate(-33px, -26px) scale(0.8);
 }
 
 .field-input:focus ~ .field-icon,
 .field-input:valid ~ .field-icon,
 .field-input:not(:placeholder-shown) ~ .field-icon {
   fill: var(--accent-color);
+} */
+/* End Варіант фокусу форми №2 */
+
+/* Варіант фокусу форми №3 */
+/* .field-item:focus-within .field-icon {
+  fill: var(--accent-color);
 }
+
+.field-item:focus-within .field-input {
+  outline: 1px solid var(--accent-color);
+}
+
+.field-item:focus-within .field-label {
+  color: var(--accent-color);
+}
+
+.field-item:focus-within .field-label,
+.field-input:not(:placeholder-shown) + .field-label {
+  padding: 0 3px;
+  background-color: var(--primary-bg-color);
+  transform: translate(-33px, -26px) scale(0.8);
+} */
+/* End Варіант фокусу форми №3 */
+
 /* End Callback Form */
 
 /* End Backdrop */
