@@ -783,6 +783,15 @@ body {
   margin-bottom: 20px;
 }
 
+.page-footer .call-to-action {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
 /* End Site logo footer */
 
 /* Сontact in footer */
@@ -806,28 +815,21 @@ body {
 .contact-list .link:focus {
   color: var(--accent-color);
 }
+/* End Сontact in footer */
 
-.contacts .social-link {
+/* Social links in footer */
+.socials .social-link {
   background-color: rgba(255, 255, 255, 0.10);
   color: var(--white-color);
   transition: background-color var(--transition-duration) var(--timing-function);
 }
 
-.contacts .social-link.current,
-.contacts .social-link:hover,
-.contacts .social-link:focus {
+.socials .social-link.current,
+.socials .social-link:hover,
+.socials .social-link:focus {
   background-color: var(--accent-color);
 }
-/* End Сontact in footer */
-
-.page-footer .call-to-action {
-  margin-bottom: 20px;
-
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white-color);
-}
+/* End Social links in footer */
 
 /* Newsletter subscription in footer */
 .newsletter-field {
@@ -875,6 +877,7 @@ body {
 
 .products-filter .btn {
   min-width: 73px;
+  height: 38px;
   padding: 6px 22px;
 
   font-size: 16px;
