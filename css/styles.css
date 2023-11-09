@@ -41,9 +41,19 @@ body {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   min-width: 200px;
+  height: 50px;
+  padding: 10px 24px;
 
   font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
   color: var(--white-color);
 
   background-color: var(--accent-color);
@@ -213,14 +223,8 @@ body {
 }
 
 .hero .btn {
-  display: block;
   margin: 0 auto;
   padding: 10px 32px;
-
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
 }
 
 /* Backdrop */
@@ -370,7 +374,7 @@ body {
 }
 
 /* Варіант фокусу форми №1 */
-.field-input:focus {
+.field-input:focus-visible {
   outline: 1px solid var(--accent-color);
 }
 
@@ -417,7 +421,7 @@ body {
   resize: none;
 }
 
-.user-comment:focus {
+.user-comment:focus-visible {
   outline: 1px solid var(--accent-color);
 }
 
@@ -465,7 +469,12 @@ body {
   opacity: 1;
 }
 
-.policy-checkbox:checked ~ .icon.box {
+.policy-checkbox:focus-visible ~ .icon,
+.policy-checkbox:checked:focus-visible ~ .icon {
+  outline: auto;
+}
+
+.policy-checkbox:checked ~ .icon.empty {
   opacity: 0;
 }
 
@@ -761,6 +770,9 @@ body {
 }
 
 .page-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -776,8 +788,7 @@ body {
 /* Сontact in footer */
 .footer-contacts {
   display: flex;
-  align-items: baseline;
-
+  flex-direction: column;
   font-style: normal;
   line-height: 1.71;
 }
@@ -796,17 +807,13 @@ body {
   color: var(--accent-color);
 }
 
-.footer-contacts .caption {
+.page-footer .call-to-action {
   margin-bottom: 20px;
 
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--white-color);
-}
-
-.footer-contacts > .item + .item {
-  margin-left: 70px;
 }
 
 .footer-contacts .social-link {
@@ -820,8 +827,35 @@ body {
 .footer-contacts .social-link:focus {
   background-color: var(--accent-color);
 }
-
 /* End Сontact in footer */
+
+/* Newsletter subscription in footer */
+
+.newsletter-field {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-field .newsletter-input {
+  width: 358px;
+  height: 50px;
+
+  padding: 14px 15px;
+
+  color: var(--white-color);
+
+  background-color: inherit;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  margin-right: 12px;
+}
+
+.newsletter-field .icon {
+  margin-left: 12px;
+}
+/* Newsletter subscription in footer */
 /* End Site footer */
 /* End Стилі для index.html */
 
@@ -841,11 +875,13 @@ body {
 }
 
 .products-filter .btn {
+  min-width: 73px;
   padding: 6px 22px;
 
   font-size: 16px;
   font-weight: 500;
   line-height: 1.63;
+  letter-spacing: 0.03em;
 
   color: var(--title-text-color);
   background-color: var(--secondary-bg-color);
