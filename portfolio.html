@@ -32,8 +32,8 @@
       </nav>
       <!-- End Site nav -->
 
-      <!-- Сontacts in header -->
-      <ul class="contacts">
+      <!-- Contacts in header -->
+      <ul class="top-contacts">
         <li class="item">
           <a class="link current" href="mailto:info@devstudio.com">
             <svg class="contact-icon" width="16px" height="12px">
@@ -219,60 +219,73 @@
   <!-- Site footer -->
   <footer class="page-footer">
     <div class="container">
-
       <!-- Сontacts in footer -->
-      <address class="footer-contacts">
-        <div class="item">
-          <!-- Site logo footer -->
-          <a class="logo link" href="./index.html"><span class="logo-color">Web</span>Studio</a>
-          <!-- End Site logo footer -->
-          <ul class="contact-list">
-            <li class="item">м. Київ, пр-т Лесі Українки, 26</li>
-            <li class="item"><a class="link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-            <li class="item"><a class="link" href="tel:+380961111111">+38 096 111 11 11</a></li>
-          </ul>
-        </div>
-
-        <!-- Social links in footer-->
-        <div class="item">
-          <p class="caption">приєднуйтесь</p>
-          <ul class="social-list">
-            <li class="item">
-              <a href="" class="social-link" aria-label="Instagram">
-                <svg class="social-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="item">
-              <a href="" class="social-link current" aria-label="Twitter">
-                <svg class="social-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="item">
-              <a href="" class="social-link" aria-label="Facebook">
-                <svg class="social-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="item">
-              <a href="" class="social-link" aria-label="Linkedin">
-                <svg class="social-icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- End Social links in footer-->
+      <address class="contacts">
+        <!-- Site logo footer -->
+        <a class="logo link" href="./index.html"><span class="logo-color">Web</span>Studio</a>
+        <!-- End Site logo footer -->
+        <ul class="contact-list">
+          <li class="item">м. Київ, пр-т Лесі Українки, 26</li>
+          <li class="item"><a class="link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+          <li class="item"><a class="link" href="tel:+380961111111">+38 096 111 11 11</a></li>
+        </ul>
       </address>
       <!-- End Contacts in footer -->
+
+      <!-- Social links in footer-->
+      <div class="socials">
+        <p class="call-to-action">Приєднуйтесь</p>
+        <ul class="social-list">
+          <li class="item">
+            <a href="" class="social-link" aria-label="Instagram">
+              <svg class="social-icon" width="20px" height="20px">
+                <use href="./images/sprite.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="" class="social-link current" aria-label="Twitter">
+              <svg class="social-icon" width="20px" height="20px">
+                <use href="./images/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="" class="social-link" aria-label="Facebook">
+              <svg class="social-icon" width="20px" height="20px">
+                <use href="./images/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="" class="social-link" aria-label="Linkedin">
+              <svg class="social-icon" width="20px" height="20px">
+                <use href="./images/sprite.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Social links in footer-->
+
+      <!-- Newsletter subscription in footer -->
+      <div class="newsletters">
+        <p class="call-to-action">Підпишіться на розсилку</p>
+        <form class="newsletter-form" autocomplete="off">
+          <label class="newsletter-field">
+            <input class="newsletter-input" type="email" name="user-email" placeholder="E-mail">
+            <button class="btn" type="submit"> Підписатися
+              <svg class="icon" width="24px" height="24px">
+                <use href="./images/sprite.svg#send"></use>
+              </svg>
+            </button>
+          </label>
+        </form>
+      </div>
+      <!-- End Newsletter subscription in footer -->
     </div>
   </footer>
   <!-- End Site footer -->
