@@ -371,11 +371,12 @@ body {
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.20);
+
+  transition: border-color var(--transition-duration) var(--timing-function);
 }
 
-/* Варіант фокусу форми №1 */
-.field-input:focus-visible {
-  outline: 1px solid var(--accent-color);
+.field-input:focus {
+  border-color: var(--accent-color);
 }
 
 .field-input:focus + .field-label {
@@ -416,13 +417,16 @@ body {
 
   font-size: 12px;
   color: var(--title-text-color);
+  background-color: transparent;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.20);
   resize: none;
+
+  transition: border-color var(--transition-duration) var(--timing-function);
 }
 
-.user-comment:focus-visible {
-  outline: 1px solid var(--accent-color);
+.user-comment:focus {
+  border-color: var(--accent-color);
 }
 
 .user-comment::placeholder {
@@ -440,6 +444,8 @@ body {
   align-items: center;
 
   margin-bottom: 30px;
+
+  cursor: pointer;
 }
 
 .policy-checkbox {
@@ -490,67 +496,8 @@ body {
 }
 
 /* End Стилі для checkbox: policy */
-
-/* Form button */
-
-
-/* End Form button */
-
-/* End Варіант фокусу форми №1 */
-
-/* Варіант фокусу форми №2 */
-/*
-.field-input:focus {
-  outline: 1px solid var(--accent-color);
-}
-
-.field-input:focus,
-.field-input:valid,
-.field-input:not(:placeholder-shown) {
-  border-color: var(--accent-color);
-}
-
-.field-input:focus + .field-label,
-.field-input:valid + .field-label,
-.field-input:not(:placeholder-shown) + .field-label {
-  padding: 0 3px;
-  color: var(--accent-color);
-  background-color: var(--primary-bg-color);
-  transform: translate(-33px, -26px) scale(0.8);
-}
-
-.field-input:focus ~ .field-icon,
-.field-input:valid ~ .field-icon,
-.field-input:not(:placeholder-shown) ~ .field-icon {
-  fill: var(--accent-color);
-} */
-/* End Варіант фокусу форми №2 */
-
-/* Варіант фокусу форми №3 */
-/* .field-item:focus-within .field-icon {
-  fill: var(--accent-color);
-}
-
-.field-item:focus-within .field-input {
-  outline: 1px solid var(--accent-color);
-}
-
-.field-item:focus-within .field-label {
-  color: var(--accent-color);
-}
-
-.field-item:focus-within .field-label,
-.field-input:not(:placeholder-shown) + .field-label {
-  padding: 0 3px;
-  background-color: var(--primary-bg-color);
-  transform: translate(-33px, -26px) scale(0.8);
-} */
-/* End Варіант фокусу форми №3 */
-
 /* End Callback Form */
-
 /* End Backdrop */
-
 /* End Hero section */
 
 .sect-title {
